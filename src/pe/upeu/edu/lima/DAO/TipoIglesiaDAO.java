@@ -34,11 +34,10 @@ public class TipoIglesiaDAO {
             st = cx.createStatement();
             rs = st.executeQuery(sql);
             while(rs.next()){
-                Iglesia d= new Iglesia();
-                d.setIdi(rs.getInt("idiglesia"));
-                d.setIdd(rs.getInt("iddistrito"));
-                d.setIdd(rs.getInt("distrito"));
-                d.setIdd(rs.getInt("estado"));
+                TipoIglesia tpi= new TipoIglesia();
+                tpi.setIdti(rs.getInt("idtipo_iglesia"));
+                tpi.setNomtipo(rs.getString("tipo_iglesia"));
+                
                 
             }
         } catch (Exception e) {

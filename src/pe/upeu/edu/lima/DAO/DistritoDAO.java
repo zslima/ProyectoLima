@@ -45,6 +45,20 @@ public class DistritoDAO {
         }
         return lista;
     }
-    
+    public int idDistrito(String nom){
+        int id=0;
+        sql="SELECT * FROM distrito WHERE distrito='"+nom+"'";
+        try {
+            cx = Conexion.getConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+             while(rs.next()){
+                 id = rs.getInt("iddistrito");
+             }
+        } catch (Exception e) {
+        }
+        
+        return id;
+    }
        
 }

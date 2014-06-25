@@ -76,6 +76,12 @@ void cargarIglesia(){
 
         jLabel4.setText("Cuenta");
 
+        cboDistrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboDistritoActionPerformed(evt);
+            }
+        });
+
         btnRegistrar.setText("Registrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -130,6 +136,11 @@ void cargarIglesia(){
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cboDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDistritoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cboDistritoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,6 +8,7 @@ package pe.upeu.edu.lima.DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import pe.upeu.edu.lima.config.Conexion;
@@ -23,28 +24,19 @@ public class IglesiaDAO {
    private Statement st;
     private ResultSet rs;
     private String sql;
-    
+    private int op;
     ArrayList<Iglesia> lista = null;
-    
-    public ArrayList<Iglesia> listarDistrito(){
+    public int registrarIglesia(int idd,int idti, String nom , int cuenta){
+        sql = "INSERT INTO iglesia VALUES(null,'"+idd+"','"+idti+"','"+nom+"','"+cuenta+"')";
         try {
-            lista = new ArrayList();
-            sql = "SELECT * FROM Iglesia";
             cx = Conexion.getConexion();
             st = cx.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next()){
-                Iglesia d= new Iglesia();
-                d.setIdi(rs.getInt("idiglesia"));
-                d.setIdd(rs.getInt("iddistrito"));
-                d.setIdd(rs.getInt("distrito"));
-                d.setIdd(rs.getInt("estado"));
-                
-            }
-        } catch (Exception e) {
-           
+            op = st.executeUpdate(sql);
+        }catch (SQLException e){
         }
-        return lista;
+        return op;
     }
     
+    
+   
 }
