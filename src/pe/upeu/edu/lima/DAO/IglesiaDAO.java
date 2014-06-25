@@ -11,5 +11,7 @@ package pe.upeu.edu.lima.DAO;
  * @author juan
  */
 public class IglesiaDAO {
-    
+     private int idi;
+     private int idd;
+     private int ide;
 }

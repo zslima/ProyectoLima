@@ -11,5 +11,52 @@ package pe.upeu.edu.lima.DAO;
  * @author juan
  */
 public class DistritoDAO {
+     private int idd;
+    private int idr;
+    private String disc;
+    private String estado;
+
+    public DistritoDAO(int idr, String disc, String estado) {
+        this.idr = idr;
+        this.disc = disc;
+        this.estado = estado;
+    }
+
+    public DistritoDAO() {
+    }
     
+
+    public int getIdd() {
+        return idd;
+    }
+
+    public void setIdd(int idd) {
+        this.idd = idd;
+    }
+
+    public int getIdr() {
+        return idr;
+    }
+
+    public void setIdr(int idr) {
+        this.idr = idr;
+    }
+
+    public String getDisc() {
+        return disc;
+    }
+
+    public void setDisc(String disc) {
+        this.disc = disc;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+       
 }
