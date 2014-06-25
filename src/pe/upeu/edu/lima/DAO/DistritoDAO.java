@@ -6,56 +6,44 @@
 
 package pe.upeu.edu.lima.DAO;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import pe.upeu.edu.lima.config.Conexion;
+import pe.upeu.edu.lima.modelo.Distrito;
+
 /**
  *
  * @author juan
  */
 public class DistritoDAO {
-     private int idd;
-    private int idr;
-    private String disc;
-    private String estado;
-
-    public DistritoDAO(int idr, String disc, String estado) {
-        this.idr = idr;
-        this.disc = disc;
-        this.estado = estado;
-    }
-
-    public DistritoDAO() {
-    }
+    private Connection cx;
+   private Statement st;
+    private ResultSet rs;
+    private String sql;
     
-
-    public int getIdd() {
-        return idd;
-    }
-
-    public void setIdd(int idd) {
-        this.idd = idd;
-    }
-
-    public int getIdr() {
-        return idr;
-    }
-
-    public void setIdr(int idr) {
-        this.idr = idr;
-    }
-
-    public String getDisc() {
-        return disc;
-    }
-
-    public void setDisc(String disc) {
-        this.disc = disc;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    ArrayList<Distrito> lista = null;
+    
+    public ArrayList<Distrito> listarDistrito(){
+        try {
+            lista = new ArrayList();
+            sql = "SELECT * FROM Distrito";
+            cx = Conexion.getConexion();
+            st = cx.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                Distrito d= new Distrito();
+                d.setIdd(rs.getInt("iddistrito"));
+                d.setIdr(rs.getInt("idregion"));
+                d.setDisc(rs.getString("distrito"));
+                d.setEstado(rs.getString("estado"));
+                
+            }
+        } catch (Exception e) {
+           
+        }
+        return lista;
     }
     
        
