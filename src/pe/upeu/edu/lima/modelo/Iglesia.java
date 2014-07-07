@@ -13,18 +13,18 @@ package pe.upeu.edu.lima.modelo;
 public class Iglesia {
     private int idi;
     private int idd;
-    private  int ti;
-    private String nomIglesia;
+    private int idti;
+    private String nomiglesia;
     private int cuenta;
 
-    public Iglesia(int idd, int ti, String nomIglesia, int cuenta) {
-        this.idd = idd;
-        this.ti = ti;
-        this.nomIglesia = nomIglesia;
-        this.cuenta = cuenta;
+    public Iglesia() {
     }
 
-    public Iglesia() {
+    public Iglesia(int idd, int idti, String nomiglesia, int cuenta) {
+        this.idd = idd;
+        this.idti = idti;
+        this.nomiglesia = nomiglesia;
+        this.cuenta = cuenta;
     }
 
     public int getIdi() {
@@ -43,20 +43,20 @@ public class Iglesia {
         this.idd = idd;
     }
 
-    public int getTi() {
-        return ti;
+    public int getIdti() {
+        return idti;
     }
 
-    public void setTi(int ti) {
-        this.ti = ti;
+    public void setIdti(int idti) {
+        this.idti = idti;
     }
 
-    public String getNomIglesia() {
-        return nomIglesia;
+    public String getNomiglesia() {
+        return nomiglesia;
     }
 
-    public void setNomIglesia(String nomIglesia) {
-        this.nomIglesia = nomIglesia;
+    public void setNomiglesia(String nomiglesia) {
+        this.nomiglesia = nomiglesia;
     }
 
     public int getCuenta() {

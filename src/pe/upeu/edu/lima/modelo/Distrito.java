@@ -14,11 +14,10 @@ package pe.upeu.edu.lima.modelo;
  * @author juan
  */
 public class Distrito {
-    private int idd;
+     private int idd;
     private int idr;
     private String disc;
     private String estado;
-
 
     public Distrito() {
     }
@@ -60,6 +59,5 @@ public class Distrito {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
     
 }
